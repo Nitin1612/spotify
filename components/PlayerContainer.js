@@ -16,11 +16,9 @@ import TrackPlayer, {
 
 export default function Controller({ onNext, onPrv }) {
   const playbackState = usePlaybackState();
-  const isPlaying = useRef('paused'); //paused play loading
-
+  const isPlaying = useRef('paused');
   useEffect(() => {
     console.log('Player State', playbackState);
-    //set the player state
     if (playbackState === 'playing' || playbackState === 3) {
       isPlaying.current = 'playing';
     } else if (playbackState === 'paused' || playbackState === 2) {
